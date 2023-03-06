@@ -17,4 +17,6 @@ This code is built and tested using :
 
 ### How To Run Test
 
+> jest and babel jest need to install in your local to run this test, asumming you have node.js installed. Run following to install jest `npm install --save-dev jest babel-jest @babel/preset-env`
+
 execute following command : `npm test`
