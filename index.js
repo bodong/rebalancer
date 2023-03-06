@@ -11,11 +11,12 @@ import {
 } from "./src/service/DataMediaService.js";
 import initializeData from "./src/data/MockData.js";
 
-console.log("Running rebalancer app...");
+console.log("Starting rebalancer app...");
 
 const budget = process.argv[2] || 0;
 console.log(`Going to process with budget ${budget}`);
 
+//initilize for mocking data, in real world it should be coming from database / API
 init(initializeData());
 
 //configure streams data
@@ -33,7 +34,6 @@ const min = 2000;
 const max = 5000;
 const types = getMediaTypes();
 var stop = stopable();
-// var i = 0;
 while (!stop) {
   const randomAmount = Math.floor(Math.random() * (max - min + 1) + min);
   const randomType = types[Math.floor(Math.random() * types.length)];
