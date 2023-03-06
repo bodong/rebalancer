@@ -13,9 +13,9 @@ This code is built and tested using :
 
 ### How To Run the Application
 
-- with local node & npm : `npm start {budget values}`, while budget values is number, i.e `1000, 100000, 200000`
+- with local node & npm : `npm start {budget values}`, while budget values is number with minimum value `10000`
 - with docker : (make sure you are login to docker hub)
-  - `docker run -e BUDGET=100000 sarwo/rebalancer:1.0.0`, you can change the budget into your desire amount as long as greater than or equal to 10000
+  - `docker run -e BUDGET=100000 sarwo/rebalancer:1.0.0`, you can change the budget into your desire amount as long as greater than or equal to `10000`
 - with docker-compose : you can modify the `docker-compose.yml` to update the budget
   - `docker compose up`
 
