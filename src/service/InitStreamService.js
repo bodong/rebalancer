@@ -3,8 +3,8 @@ const initStream = (budget, medias) => {
     throw Error("Data set is required");
   }
 
-  if (budget <= 0) {
-    throw Error("Budget must be greater than zero");
+  if (budget < 10000) {
+    throw Error("Minimum budget allowed is 10000");
   }
 
   const allocatedBudget = budget / medias.length;

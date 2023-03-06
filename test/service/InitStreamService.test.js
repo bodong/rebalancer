@@ -24,7 +24,7 @@ test("it should not initiate with negative budget", () => {
 });
 
 test("it should initiate the budget allocation evenly", () => {
-  const budget = 1000;
+  const budget = 10000;
 
   init(initializeData());
   const medias = getAllMedia();
@@ -33,7 +33,7 @@ test("it should initiate the budget allocation evenly", () => {
   expect(medias).toEqual(
     expect.arrayContaining([
       expect.objectContaining({
-        amount: 500,
+        amount: 5000,
       }),
     ])
   );
