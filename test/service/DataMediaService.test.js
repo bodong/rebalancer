@@ -1,7 +1,13 @@
+import initializeData from "../../src/data/MockData";
 import {
   getMediaByType,
   getAllMedia,
-} from "../../src/service/SearchMediaService";
+  init,
+} from "../../src/service/DataMediaService";
+
+beforeEach(() => {
+  init(initializeData());
+});
 
 test("should get media by type TVL", () => {
   const media = getMediaByType("TVL");
@@ -10,8 +16,9 @@ test("should get media by type TVL", () => {
 });
 
 test("should get undefined by type UNKOWN", () => {
-  const media = getMediaByType("UNKNOWN");
-  expect(media).toBeUndefined();
+  expect(() => {
+    getMediaByType("UNKNOWN");
+  }).toThrow();
 });
 
 test("should get all media", () => {

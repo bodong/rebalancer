@@ -1,6 +1,6 @@
 import MediaStream from "./MediaStream.js";
 
-//simpler mechanism to refresh data
+//simpler mechanism to store data
 const initializeData = () => {
   const mediaStreams = [
     new MediaStream("TVL", "TV Linear"),

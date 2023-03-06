@@ -1,4 +1,4 @@
-import { getAllMedia, getMediaByType } from "./SearchMediaService.js";
+import { getAllMedia, getMediaByType } from "./DataMediaService.js";
 
 const consumeable = (media) => {
   return media.amount > 0;
@@ -41,6 +41,9 @@ const balancing = () => {
 const consumeAds = (type, consumptionAmount) => {
   const media = getMediaByType(type);
 
+  if (consumptionAmount < 2000 || consumptionAmount > 5000) {
+    throw Error("Ads cost range must be between 2000 and 5000 ");
+  }
   // check if consumeable (meaning requested media must be positive)
   if (!consumeable(media)) {
     //TODO: in the requirement is not mention for this scenario (what to do for negative value), maybe best if the request is redirected to other

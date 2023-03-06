@@ -7,12 +7,16 @@ import initStream from "./src/service/InitStreamService.js";
 import {
   getMediaTypes,
   getAllMedia,
-} from "./src/service/SearchMediaService.js";
+  init,
+} from "./src/service/DataMediaService.js";
+import initializeData from "./src/data/MockData.js";
 
 console.log("Running rebalancer app...");
 
 const budget = process.argv[2] || 0;
 console.log(`Going to process with budget ${budget}`);
+
+init(initializeData());
 
 //configure streams data
 initStream(budget, getAllMedia());

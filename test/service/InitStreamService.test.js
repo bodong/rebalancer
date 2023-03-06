@@ -1,5 +1,6 @@
-import { initStream } from "../../src/service/InitStreamService";
-import { getAllMedia } from "../../src/service/SearchMediaService";
+import initStream from "../../src/service/InitStreamService.js";
+import { getAllMedia, init } from "../../src/service/DataMediaService.js";
+import initializeData from "../../src/data/MockData.js";
 
 test("it should not initiate with empty data set", () => {
   const budget = 1000;
@@ -24,7 +25,10 @@ test("it should not initiate with negative budget", () => {
 
 test("it should initiate the budget allocation evenly", () => {
   const budget = 1000;
+
+  init(initializeData());
   const medias = getAllMedia();
+
   initStream(budget, medias);
   expect(medias).toEqual(
     expect.arrayContaining([
