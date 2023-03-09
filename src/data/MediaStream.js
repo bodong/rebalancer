@@ -2,7 +2,7 @@
 const thresholdRate = 5 / 100;
 
 const MediaStream = class {
-  constructor(type, name, impression) {
+  constructor(type, name) {
     this.type = type;
     this.name = name;
     this.amount = 0.0;
